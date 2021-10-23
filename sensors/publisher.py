@@ -14,7 +14,7 @@ tempInterval = 0.5 # interval for genTempCase = 0 (uniform temp array)
 
 indexCounter = 0
 
-#create a uniform array for genTempCase = 0
+#create a uniform array for genTempCase
 tempCase1 = numpy.arange(minRange, maxRange, tempInterval).tolist()
 
 def genTemperature(minRange,maxRange):
