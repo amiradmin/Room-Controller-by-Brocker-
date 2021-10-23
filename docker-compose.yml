@@ -1,0 +1,76 @@
+version: "3"
+services:
+
+  sensor1:
+    container_name: sensor1
+    tty: true
+    build:
+      context: ./sensors
+      dockerfile: Dockerfile
+    environment:
+      - SENSOR_ID=1
+    ports:
+      - 4000:4000
+    networks:
+      - sensor1-net
+
+  sensor2:
+    container_name: sensor2
+    tty: true
+    build:
+      context: ./sensors
+      dockerfile: Dockerfile
+    environment:
+      - SENSOR_ID=2
+    ports:
+      - 4002:4002
+    networks:
+      - sensor2-net
+
+
+  sensor3:
+    container_name: sensor3
+    tty: true
+    build:
+      context: ./sensors
+      dockerfile: Dockerfile
+    environment:
+      - SENSOR_ID=3
+    ports:
+      - 4003:4003
+    networks:
+      - sensor3-net
+
+#
+#  sensor4:
+#    container_name: sensor4
+#    tty: true
+#    build:
+#      context: ./sensors
+#      dockerfile: Dockerfile
+#    environment:
+#      - SENSOR_ID=4
+#    ports:
+#      - 4004:4004
+#    networks:
+#      - sensor4-net
+
+
+  controller:
+    container_name: controller
+    tty: true
+    build:
+      context: ./temp-coltroller
+      dockerfile: Dockerfile
+    ports:
+      - 4010:4010
+    networks:
+      - controller-net
+
+
+networks:
+    sensor1-net:
+    sensor2-net:
+    sensor3-net:
+    sensor4-net:
+    controller-net:
