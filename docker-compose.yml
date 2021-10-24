@@ -8,7 +8,7 @@ services:
       context: ./sensors
       dockerfile: Dockerfile
     environment:
-      - SENSOR_ID=1
+      - SENSOR_ID=1   #Sensor ID must be set here
     ports:
       - 4000:4000
     networks:
@@ -21,7 +21,7 @@ services:
       context: ./sensors
       dockerfile: Dockerfile
     environment:
-      - SENSOR_ID=2
+      - SENSOR_ID=2   #Sensor ID must be set here
     ports:
       - 4002:4002
     networks:
@@ -35,7 +35,7 @@ services:
       context: ./sensors
       dockerfile: Dockerfile
     environment:
-      - SENSOR_ID=3
+      - SENSOR_ID=3   #Sensor ID must be set here
     ports:
       - 4003:4003
     networks:
@@ -49,11 +49,25 @@ services:
 #      context: ./sensors
 #      dockerfile: Dockerfile
 #    environment:
-#      - SENSOR_ID=4
+#      - SENSOR_ID=4   #Sensor ID must be set here
 #    ports:
 #      - 4004:4004
 #    networks:
 #      - sensor4-net
+#
+
+#  sensor5:
+#    container_name: sensor5
+#    tty: true
+#    build:
+#      context: ./sensors
+#      dockerfile: Dockerfile
+#    environment:
+#      - SENSOR_ID=5 #Sensor ID must be set here
+#    ports:
+#      - 4005:4005
+#    networks:
+#      - sensor5-net
 
 
   controller:
@@ -72,5 +86,6 @@ networks:
     sensor1-net:
     sensor2-net:
     sensor3-net:
-    sensor4-net:
+#    sensor4-net:
+#    sensor5-net:
     controller-net:

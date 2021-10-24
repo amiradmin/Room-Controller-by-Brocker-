@@ -1,13 +1,9 @@
 import subscriber as Subscriber
-import time
 import paho.mqtt.client as mqtt
-import json
 import _thread
 
 
-
 def subscriberInit():
-
     """ Initialize MQTT subscriber
     """
 
@@ -17,15 +13,13 @@ def subscriberInit():
     client.connect("172.17.0.1", 1883, 60)
     client.loop_forever()
 
-def main():
 
+def main():
     """ Main function
     """
-
     try:
         print("Starting Subscriber...")
-        _thread.start_new_thread(subscriberInit, () ) # create subscriber thread
-
+        _thread.start_new_thread(subscriberInit, ())  # create subscriber thread
 
     except:
         print("Unable to start threads")
