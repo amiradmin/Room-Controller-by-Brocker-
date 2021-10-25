@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - SENSOR_ID=1   #Sensor ID must be set here
+      - BROKER_IP=172.17.0.1 #IP address of broker container
     ports:
       - 4000:4000
     networks:
@@ -22,6 +23,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - SENSOR_ID=2   #Sensor ID must be set here
+      - BROKER_IP=172.17.0.1 #IP address of broker container
     ports:
       - 4002:4002
     networks:
@@ -36,6 +38,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - SENSOR_ID=3   #Sensor ID must be set here
+      - BROKER_IP=172.17.0.1 #IP address of broker container
     ports:
       - 4003:4003
     networks:

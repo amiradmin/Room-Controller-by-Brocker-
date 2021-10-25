@@ -9,10 +9,10 @@ def publisherStart():
     """ Create temperature sensor objetct and send them to brocker
     """
     sensorID = os.getenv('SENSOR_ID')
-    interval = 1  # time (seconds) that each sensor send data
+    interval = 1  # time is in second
     obj = Publisher.generateSensor()  # generate temp object
     while True:
-        data = Publisher.formatTemperature(sensorID)  # create json string
+        data = Publisher.formatTemperature(sensorID)  # produce json string
         obj.publish("/readings/temperature", json.dumps(data))  # publish data to mqtt
         time.sleep(interval)
     client.loop_stop();
@@ -23,11 +23,11 @@ def main():
     """ Main function
     """
     try:
-        print("Starting Publisher...")
-        _thread.start_new_thread(publisherStart, ())  # create publisher thread
+        print("Starting Publisher ")
+        _thread.start_new_thread(publisherStart, ())  # produce publisher thread
 
     except:
-        print("Unable to start threads")
+        print("Con not to start threads")
     while 1:
         pass
 

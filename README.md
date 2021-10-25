@@ -12,6 +12,9 @@ the project has been dockerized for simplicity of implementation.<br />
 Each part has its own topic in the broker:
 * radiator/room-1 for controller
 * readings/temperature for sensors
+<br/>
+Regarding setting radiator level I found peace of code on internet after searching about
+it , I should mention there are different methods of manipulation.
 ####List of containers:
 * Mosquito 
 * Controller
@@ -19,7 +22,8 @@ Each part has its own topic in the broker:
 * Sensor 2
 * Sensor 3
 <br />
-You can add more sensors by editing docker-compose file.<br />
+You can add more sensors by editing docker-compose file and also you should 
+set ip address of broker as well in the file<br />
 
 
 ####Installation:

@@ -18,11 +18,11 @@ def main():
     """ Main function
     """
     try:
-        print("Starting Subscriber...")
-        _thread.start_new_thread(subscriberInit, ())  # create subscriber thread
+        print("Starting Subscriber ")
+        _thread.start_new_thread(subscriberInit, ())  # makes subscriber thread
 
     except:
-        print("Unable to start threads")
+        print("Con not  to start threads")
 
     while 1:
         pass
